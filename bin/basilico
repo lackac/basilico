@@ -1,0 +1,13 @@
+#!/usr/bin/env macruby
+
+require 'basilico'
+
+event = ARGV.shift
+unless Basilico::EVENTS.include?(event)
+  $stderr.puts "USAGE: #{File.basename(__FILE__)} event [key=value ...]"
+  $stderr.puts "       where event is one of the following:"
+  $stderr.puts "          #{Basilico::EVENTS.join(", ")}"
+  exit 1
+end
+
+Basilico.run_all(event, ARGV)

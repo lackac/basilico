@@ -1,0 +1,1 @@
+do shell script "bash -lc 'rvm macruby; basilico every \"title=$pomodoroName\" duration=$duration mins=$mins passed=$passed timeleft=$time' &"
